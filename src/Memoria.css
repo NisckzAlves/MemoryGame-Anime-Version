@@ -1,0 +1,220 @@
+.corpo {
+  font-family: Arial, sans-serif;
+  background-color: #fae7f7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+h1 {
+  color: #333;
+}
+
+.tabuleiro {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 800px;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.carta {
+  width: 150px;
+  height: 150px;
+  margin: 10px;
+  perspective: 1000px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.carta .imagem-verso {
+  width: 100%;
+  height: 100%;
+  background-image: url('https://cdn.pixabay.com/photo/2020/08/12/17/42/question-mark-5483259_960_720.jpg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.carta img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.carta.virada .imagem-verso,
+.carta.virada img {
+  transform: rotateY(180deg);
+}
+
+.carta.encontrada {
+  cursor: default;
+}
+
+.niveis {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.niveis button {
+  font-size: 16px;
+  padding: 10px 20px;
+  margin: 0 5px;
+  background-color: #ff6f9e;
+  width: 100px;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.niveis button:focus {
+  outline: none;
+}
+
+.solved {
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+  border: 2px solid #0f0;
+}
+
+.flipped {
+  pointer-events: none;
+}
+
+
+@media only screen and (max-width: 480px) {
+  .corpo {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+  }
+  body{
+    background-color: #fce2f8;
+  }
+  h1 {
+    color: #333;
+  }
+  
+  .tabuleiro {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    max-width: 90vw;
+    margin: 20px auto;
+  }
+  
+
+  .carta {
+    width: 90px;
+    height: 150px;
+    cursor: pointer;
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 4px;
+  }
+  
+  .carta .imagem-verso {
+    width: 100%;
+    height: 100%;
+    background-image: url('https://cdn.pixabay.com/photo/2020/08/12/17/42/question-mark-5483259_960_720.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 5px;
+    transform: rotateY(0deg);
+    transition: transform 0.5s;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .carta img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    transform: rotateY(180deg);
+    transition: transform 0.5s;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .carta.virada .imagem-verso {
+    transform: rotateY(180deg);
+  }
+  
+  .carta.virada img {
+    transform: rotateY(0deg);
+  }
+  
+  .carta.encontrada {
+    cursor: default;
+  }
+  
+  .niveis {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .niveis button {
+    font-size: 16px;
+    padding: 10px 20px;
+    margin: 0 5px;
+    background-color: #ff6f9e;
+    width: 100px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .niveis button:focus {
+    outline: none;
+  }
+  
+  .solved {
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+    border: 2px solid #0f0;
+  }
+  
+  .flipped {
+    pointer-events: none;
+  }
+  
+  .carta .imagem-verso {
+    width: 100%;
+    height: 100%;
+    background-image: url('https://cdn.pixabay.com/photo/2020/08/12/17/42/question-mark-5483259_960_720.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 5px;
+    transform: rotateY(0deg);
+    transition: transform 0.5s;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .carta.virada .imagem-verso {
+    transform: rotateY(180deg);
+  }
+  
+}
+
